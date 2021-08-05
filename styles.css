@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --primary-color: #0066ff;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+::selection {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.container {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+    max-width: 800px;
+    width: 100%;
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.container .product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .product-item .img {
+    width: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+.container .product-item .img img {
+    width: 100%;
+    height: 407px;
+    object-fit: cover;
+}
+
+.container .product-item .content {
+    max-width: 436px;
+    width: 100%;
+    padding-left: 2rem;
+    margin: 0 auto;
+}
+
+.container .product-item .content .title {
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.container .product-item .content .price {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    color: #333;
+}
+
+.container .product-item .content .price span {
+    font-size: 1rem;
+}
+
+.container .product-item .content .rate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.container .product-item .content .rate span {
+    color: silver;
+}
+
+.container .product-item .content .rate span.active {
+    color: orange;
+}
+
+.container .product-item .content .desc {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #666;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container .product-item .content .colors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.container .product-item .content .colors div {
+    --background: #fff;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 4px;
+    padding: .5rem;
+    height: 58px;
+    width: 58px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.container .product-item .content .colors div.active {
+    border-color: var(--primary-color);
+}
+
+.container .product-item .content .colors div:last-child {
+    margin-right: 0;
+}
+
+.container .product-item .content .colors div .item {
+    background: var(--background);
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    /* box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.16); */
+    border: 1px solid rgba(0, 0, 0, 0.01);
+}
+
+.container .product-item .content .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .product-item .content .buttons .btn {
+    border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 1rem;
+    opacity: 0.9;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.container .product-item .content .buttons .btn:last-child {
+    margin-right: 0;
+}
+
+.container .product-item .content .buttons .btn .icon {
+    display: inline-block;
+    padding: 0.9rem 1rem;
+    background: rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.container .product-item .content .buttons .btn:hover .icon,
+.container .product-item .content .buttons .btn:focus .icon {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.container .product-item .content .buttons .btn .txt {
+    padding: 0.9rem 2rem;
+    padding-left: 1.5rem;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+@media (max-width: 863px) {
+    .container .product-item .content {
+        margin-top: 2rem;
+    }
+}

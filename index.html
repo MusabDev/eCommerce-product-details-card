@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCommerce Product Details Item with Color Selection using CSS & jQuery</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="product-item">
+            <div class="img">
+                <img src="imgs/main-img.jpg" alt="" id="productImg">
+            </div>
+            <div class="content">
+                <h3 class="title">New Apple iPhone 12</h3>
+                <p class="price"><span class="highlight">$</span>699.00</p>
+                <div class="rate">
+                    <span class="material-icons active">
+                        star
+                    </span>
+                    <span class="material-icons active">
+                        star
+                    </span>
+                    <span class="material-icons active">
+                        star
+                    </span>
+                    <span class="material-icons active">
+                        star
+                    </span>
+                    <span class="material-icons">
+                        star
+                    </span>
+                </div>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, placeat nisi? Iure reiciendis corporis quo.</p>
+                <div class="colors">
+                    <div style="--background: #f9f4f0;" class="color_select" data-color="#f9f4f0" data-image="imgs/main-img.jpg">
+                        <button class="item"></button>
+                    </div>
+                    <div style="--background: #e03636;" class="color_select" data-color="#e03636" data-image="imgs/img-1.jpg">
+                        <button class="item"></button>
+                    </div>
+                    <div style="--background: #023256;" class="color_select" data-color="#023256" data-image="imgs/img-2.jpg">
+                        <button class="item"></button>
+                    </div>
+                    <div style="--background: #166f4f;" class="color_select" data-color="#166f4f" data-image="imgs/img-3.jpg">
+                        <button class="item"></button>
+                    </div>
+                    <div style="--background: #9136b2;" class="color_select" data-color="#9136b2" data-image="imgs/img-4.jpg">
+                        <button class="item"></button>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="btn add-cart-btn">
+                        <span class="material-icons icon">
+                            add_shopping_cart
+                        </span>
+                        <span class="txt">Add to Cart</span>
+                    </button>
+                    <button class="btn buy-btn" style="min-height: 52.78px;">
+                        <span class="txt" style="padding-left: 2rem;">Buy Now</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).on("click", ".color_select", function (e) {
+                e.preventDefault();
+
+                const color = $(this).data("color");
+                const image = $(this).data("image");
+                
+                $("body").css("background-color", color);
+                $("#productImg").attr("src", image);
+
+                $(".color_select").removeClass("active");
+                $(this).addClass("active");
+
+                if (color != "#f9f4f0") {
+                    $("body").css("--primary-color", color);
+                } else {
+                    $("body").css("--primary-color", "#0066ff");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
